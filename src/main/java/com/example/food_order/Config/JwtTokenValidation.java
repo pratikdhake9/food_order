@@ -1,7 +1,7 @@
 package com.example.food_order.Config;
 
 
-import com.auth0.jwt.JWT;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -37,7 +37,7 @@ public class JwtTokenValidation extends OncePerRequestFilter {
 
             try{
                 SecretKey key= Keys.hmacShaKeyFor(JwtConstant.SECRET_KEY.getBytes());
-                Claims claims= Jwts.parser().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
+                Claims claims= Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
 
                 String email=String.valueOf(claims.get("email"));
                 String authorities=String.valueOf(claims.get("authorities"));

@@ -26,8 +26,8 @@ public class AppConfig {
 
         http.sessionManagement(managment-> managment.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(Authorize->Authorize
-                        .requestMatchers("/api/admin/**").hasAnyRole("RESTAURANT_ADMIN","ADMIN")
-                        .requestMatchers("api/**").authenticated()
+                        .requestMatchers("/api/admin/**").hasAnyRole("RESTAURANT_OWNER","ADMIN")
+                        .requestMatchers("/api/**").authenticated()
                         .anyRequest().permitAll()
                 ).addFilterBefore(new JwtTokenValidation(), BasicAuthenticationFilter.class)
                 .csrf(csrf->csrf.disable())
@@ -46,6 +46,7 @@ public class AppConfig {
                         "https://food-order.vercel.app", "http://localhost:3000"
                 ));
                 cfg.setAllowedMethods(Collections.singletonList("*"));
+
                 cfg.setExposedHeaders(Arrays.asList("Authorization"));
                 cfg.setMaxAge(3600L);
                 return cfg;
