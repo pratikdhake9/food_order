@@ -1,6 +1,6 @@
 package com.example.food_order.Model;
 
-import com.example.food_order.User_Role;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,7 +25,9 @@ public class Restaurant {
     private String name;
     private String description;
     private String cuisineType;
-    @OneToOne
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
     private Address address;
 
     @Embedded

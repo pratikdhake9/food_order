@@ -46,6 +46,7 @@ public class RestaurantController {
     }
 
     @PutMapping("/{id}/add-favorites")
+    
     public ResponseEntity< RestaurantDto> addToFavorites(@RequestHeader("Authorization") String jwt, @PathVariable Long id) throws  Exception{
         User user=userService.findUserByJwtToken(jwt);
 
