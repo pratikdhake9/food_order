@@ -10,10 +10,8 @@ const NavBar = () => {
     return (
         <div className={'px-5 z-50 py-[.8rem] bg-violet-950 lg:px-20 flex justify-between '}>
 
-
-
             <div className={'lg:mr-10 cursor-pointer flex items-center space-x-4'}>
-                <li className={'logo font-semibold text-gray-300 text-2xl'}>
+                <li className={ 'logo font-semibold text-gray-300 text-2xl'}>
                         Food Order
                 </li>
 
