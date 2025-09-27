@@ -1,4 +1,4 @@
-export const TopMeals=[
+export const TopMeals= [
     {
         image:"https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg",
         title:"Pizza"
@@ -54,5 +54,4 @@ export const TopMeals=[
         image:"https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=600",
         title:"Dosa"
     },
-
 ]

@@ -3,23 +3,25 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import {TopMeals} from "./TopMeals";
-import CarouselItem from "./CarouselItem";
+import {CarouselItems} from "./CarouselItems";
 
 const MultiItemCarousel = () => {
-    const settings = {
+    var settings = {
         dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 2000,
         arrows: false,
     };
     return (
-        <div>
-            <Slider {...settings}>
-                {TopMeals.map((item)=><CarouselItem image={item.image} title={item.title}/>)}
+        <div {...settings}>
+            <Slider>
+                {TopMeals.map((meal)=>
+                    <CarouselItems image={meal.image} title={meal.title}/>
+                )}
             </Slider>
         </div>
     )
