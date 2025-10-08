@@ -26,7 +26,7 @@ const restaurant=[1,1,1,1,1,1,1,1]
             </section>
             <section className={'px-5 lg:pt-5'}>
                 <h1 className={'text-2xl font-semibold text-gray-400 pb-5'}>Order from our handpicked favorite</h1>
-                <div>
+                <div className='flex flex-wrap items-center justify-around'>
                     {restaurant.map((item) => (<RestaurantCard/>))}
                 </div>
             </section>

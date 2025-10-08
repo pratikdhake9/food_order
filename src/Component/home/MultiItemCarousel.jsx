@@ -6,7 +6,7 @@ import {TopMeals} from "./TopMeals";
 import {CarouselItems} from "./CarouselItems";
 
 const MultiItemCarousel = () => {
-    var settings = {
+    const settings = {
         dots: false,
         infinite: true,
         speed: 500,
